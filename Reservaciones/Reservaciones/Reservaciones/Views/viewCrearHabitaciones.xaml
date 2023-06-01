@@ -2,21 +2,27 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Reservaciones.Views.viewCrearHabitaciones"
+             xmlns:local="clr-namespace:Reservaciones.ViewModels"
              IconImageSource="cama.png"
              >
+
+    <ContentPage.BindingContext>
+        <local:viewModelHabitaciones></local:viewModelHabitaciones>
+    </ContentPage.BindingContext>
+    
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Nombre Habitacion" ></Label>
-            <Entry Keyboard="Default" ></Entry>
+            <Entry Text="{Binding Nombre}"  Keyboard="Default" ></Entry>
             <Label Text="Cantidad de Huespedes"></Label>
-            <Entry Keyboard="Numeric" ></Entry>
-            <Button Text="Crear Habitacion"></Button>
+            <Entry Text="{Binding CantidadHuespedes}"  Keyboard="Numeric" ></Entry>
+            <Button Command="{Binding crearHabitacion}"  Text="Crear Habitacion"></Button>
 
-            <ListView >
+            <ListView ItemsSource="{Binding listaH}" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding Title}"
-                              Detail="{Binding Subtitle}" />
+                        <TextCell Text="{Binding nombre}"
+                              Detail="{Binding cantidadHuespedes}" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
