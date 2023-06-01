@@ -6,5 +6,6 @@
             >
 
     <local:viewCrearHabitaciones></local:viewCrearHabitaciones>
+    <local:viewReservaciones></local:viewReservaciones>
     
 </TabbedPage>

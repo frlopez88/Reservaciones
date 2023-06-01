@@ -4,6 +4,7 @@ using System.Text;
 
 namespace Reservaciones.Models
 {
+    [Serializable]
     public class Habitaciones
     {
 

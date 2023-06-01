@@ -83,7 +83,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\horario.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Reservaciones\Reservaciones.csproj">
       <Project>{7112934F-9A9F-474F-9630-69A83B273BBC}</Project>

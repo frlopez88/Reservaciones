@@ -6,9 +6,21 @@
              >
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Form de Habitaciones"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Nombre Habitacion" ></Label>
+            <Entry Keyboard="Default" ></Entry>
+            <Label Text="Cantidad de Huespedes"></Label>
+            <Entry Keyboard="Numeric" ></Entry>
+            <Button Text="Crear Habitacion"></Button>
+
+            <ListView >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Title}"
+                              Detail="{Binding Subtitle}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
