@@ -16,18 +16,23 @@ namespace Reservaciones.Models
 
 
         // Regla de Negocio
-        public void agregarReservacion(Reservacion r) {
+        public bool agregarReservacion(Reservacion r) {
 
 
             if (r.cantidadPersonas <= cantidadHuespedes) { 
             
                 reservacion.Add(r);
-
+                return true;
             }
             
+
+            return false;
         }
 
-
+        public override string ToString()
+        {
+            return $" {nombre} - {cantidadHuespedes} ";
+        }
 
     }
 }

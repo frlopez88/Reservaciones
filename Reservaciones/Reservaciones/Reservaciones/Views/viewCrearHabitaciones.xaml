@@ -6,6 +6,7 @@
              IconImageSource="cama.png"
              >
 
+
     <ContentPage.BindingContext>
         <local:viewModelHabitaciones></local:viewModelHabitaciones>
     </ContentPage.BindingContext>

@@ -2,12 +2,39 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Reservaciones.Views.viewReservaciones"
+             xmlns:local ="clr-namespace:Reservaciones.ViewModels"
              IconImageSource="horario.png">
+
+    <ContentPage.BindingContext>
+
+        <local:viewModelReservacion></local:viewModelReservacion>
+        
+    </ContentPage.BindingContext>
+    
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Reservaciones"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+            <Label Text="Fecha Reservación"></Label>
+            <DatePicker  MinimumDate="{Binding FechaMin}" Date="{Binding FechaReserva}"  ></DatePicker>
+
+            <Label Text="Cantidad de Personas"  ></Label>
+            <Entry  Text="{Binding CantidadPersonas}" Keyboard="Numeric" ></Entry>
+
+            <Label Text="Nombre" ></Label>
+            <Entry Text="{Binding Nombre}" Keyboard="Default" ></Entry>
+            
+            <Label Text="Telefono" ></Label>
+            <Entry Text="{Binding Telefono}" Keyboard="Telephone" ></Entry>
+            
+            <Label Text="Correo" ></Label>
+            <Entry Text="{Binding Correo}" Keyboard="Email" ></Entry>
+
+            <Label Text="Habitacion"></Label>
+            <Picker ItemsSource="{Binding listaH }"  SelectedItem="{Binding ObjetoSeleccionado}" ></Picker>
+            
+            <Button Command="{Binding crearReserva}" Text="Crear" ></Button>
+
+            <Label Text="{Binding Resultado}"  > </Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

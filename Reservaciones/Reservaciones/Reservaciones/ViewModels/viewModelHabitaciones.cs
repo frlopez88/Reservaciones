@@ -14,7 +14,7 @@ namespace Reservaciones.ViewModels
     public class viewModelHabitaciones : INotifyPropertyChanged
     {
 
-        viewModelHabitaciones() {
+        public viewModelHabitaciones() {
 
             // Rutina para abrir el archivo de listas 
 
@@ -56,6 +56,9 @@ namespace Reservaciones.ViewModels
 
                 File.WriteAllBytes(ruta, datoSerializados);
 
+                CantidadHuespedes = 0;
+
+                Nombre = String.Empty;
             });
 
 
